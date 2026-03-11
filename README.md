@@ -27,11 +27,11 @@ Here’s a simple beginner-level diagram for this lab:
 
 ### Deploying a Dockerized app on AWS
 
-![Deploying a Dockerized app on AWS](./aws-lab-ec2-github-docker-lab.png)
+![Deploying a Dockerized app on AWS](https://github.com/awsrmmustansarjavaid/Cloud-Engineering-R-S-D/raw/main/CLoud-Engineering/Cloud-research-study-drive/DevOps-research-study-drive/Cloud-ISPs-AWS-AZ-GC/AWS-Cloud-Engineering/AWS-Cloud-Practice-dev/AWS-Labs-AWS-Labs-Guide/AWS-Labs-Projects/AWS%20DEVOPS%20Labs/aws-lab-ec2-github-docker-lab/aws-lab-ec2-github-docker-lab.png)
 
 ### Docker deployment flowchart overview
 
-![Deploying a Dockerized app on AWS](./aws-lab-ec2-github-docker-lab-flowcart.png)
+![Deploying a Dockerized app on AWS](https://github.com/awsrmmustansarjavaid/Cloud-Engineering-R-S-D/raw/main/CLoud-Engineering/Cloud-research-study-drive/DevOps-research-study-drive/Cloud-ISPs-AWS-AZ-GC/AWS-Cloud-Engineering/AWS-Cloud-Practice-dev/AWS-Labs-AWS-Labs-Guide/AWS-Labs-Projects/AWS%20DEVOPS%20Labs/aws-lab-ec2-github-docker-lab/aws-lab-ec2-github-docker-lab-flowcart.png)
 
 ### Explanation of Flow:
 

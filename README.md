@@ -25,6 +25,56 @@ Here’s a simple beginner-level diagram for this lab:
        Browser
 ```
 
+### AWS Docker Lab Visual Workflow
+
+```
+┌───────────────────────┐
+│ 1️⃣ Local Machine     │
+│   aws-docker-lab/    │
+│ ┌───────────────┐    │
+│ │ server.js     │    │
+│ │ package.json  │    │
+│ │ Dockerfile    │    │
+│ └───────────────┘    │
+│                       │
+│ git push / GitHub Web │
+└───────────┬──────────┘
+            │
+            ▼
+┌─────────────────────────────┐
+│ 2️⃣ GitHub Repository       │
+│   https://github.com/       │
+│   awsrmmustansarjavaid/     │
+│   aws-docker-lab            │
+│ ┌───────────────┐           │
+│ │ server.js     │           │
+│ │ package.json  │           │
+│ │ Dockerfile    │           │
+│ └───────────────┘           │
+└───────────┬─────────────────┘
+            │ git clone
+            ▼
+┌─────────────────────────────┐
+│ 3️⃣ AWS EC2 Instance        │
+│   Amazon Linux 2023         │
+│ ┌───────────────┐           │
+│ │ ~/aws-docker-lab │        │
+│ │ server.js       │        │
+│ │ package.json    │        │
+│ │ Dockerfile      │        │
+│ └───────────────┘           │
+│ sudo docker build -t aws-docker-lab . │
+│ sudo docker run -d -p 3000:3000 aws-docker-lab │
+└───────────┬─────────────────┘
+            │ Port 3000
+            ▼
+┌─────────────────────────────┐
+│ 4️⃣ Browser / Public Access │
+│ http://<EC2_PUBLIC_IP>:3000│
+│ Output: "Hello from AWS EC2 + Docker!" │
+└─────────────────────────────┘
+```
+
 ### Deploying a Dockerized app on AWS
 
 ![Deploying a Dockerized app on AWS](https://github.com/awsrmmustansarjavaid/Cloud-Engineering-R-S-D/raw/main/CLoud-Engineering/Cloud-research-study-drive/DevOps-research-study-drive/Cloud-ISPs-AWS-AZ-GC/AWS-Cloud-Engineering/AWS-Cloud-Practice-dev/AWS-Labs-AWS-Labs-Guide/AWS-Labs-Projects/AWS%20DEVOPS%20Labs/aws-lab-ec2-github-docker-lab/aws-lab-ec2-github-docker-lab.png)
@@ -33,15 +83,31 @@ Here’s a simple beginner-level diagram for this lab:
 
 ![Deploying a Dockerized app on AWS](https://github.com/awsrmmustansarjavaid/Cloud-Engineering-R-S-D/raw/main/CLoud-Engineering/Cloud-research-study-drive/DevOps-research-study-drive/Cloud-ISPs-AWS-AZ-GC/AWS-Cloud-Engineering/AWS-Cloud-Practice-dev/AWS-Labs-AWS-Labs-Guide/AWS-Labs-Projects/AWS%20DEVOPS%20Labs/aws-lab-ec2-github-docker-lab/aws-lab-ec2-github-docker-lab-flowcart.png)
 
-### Explanation of Flow:
+### Explanation of Each Step
 
-- GitHub Repo → stores your Node.js app and Dockerfile.
+### 1️⃣ Local Machine
 
-- EC2 Instance → host machine in AWS.
+- You create the project folder with server.js, package.json, and Dockerfile.
 
-- Docker Engine → containerizes and runs your app.
+- Push to GitHub via GitHub Web (or git push if Git installed locally).
 
-- Browser → access app via EC2 public IP + mapped port (3000).
+### 2️⃣ GitHub Repository
+
+- Central place to store your code.
+
+- EC2 will pull the latest version from here.
+
+### 3️⃣ AWS EC2
+
+- Launch EC2 → install Docker → clone repo.
+
+- Build Docker image → run container mapping port 3000.
+
+### 4️⃣ Browser
+
+- Use EC2 public IP and port 3000 to access your Node.js app.
+
+- You should see: "Hello from AWS EC2 + Docker!".
 
 ### Step 0: Prerequisites
 
